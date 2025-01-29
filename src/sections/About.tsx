@@ -1,6 +1,6 @@
+"use client"
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
-import StarIcon from "@/assets/icons/star.svg"
 import bookImage from "@/assets/images/book-cover.png"
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg"
@@ -10,12 +10,12 @@ import DockerIcon from "@/assets/icons/docker_1.svg"
 import KuberIcon from "@/assets/icons/Kubernetss.svg"
 import Java from "@/assets/icons/java_1.svg"
 import Node from "@/assets/icons/node.svg"
-import TchIcon from "@/components/TchIcon";
 import mapImage from "@/assets/images/mapImage.png"
 import simileEmoji from "@/assets/images/memoji-smile.png"
 import CardHeader from "@/components/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems";
-
+import {motion} from "framer-motion"
+import { useRef } from "react";
 
 const toolBoxItems = [
   {
@@ -91,6 +91,7 @@ const hoobles = [
 ]
 
 export const AboutSection = () => {
+  const constrainrRef= useRef(null);
   return (
     <div className="py-20 lg:py-28">
       <div className="container">
@@ -112,44 +113,48 @@ export const AboutSection = () => {
                 className="px-6 pt-6"
               />
 
-              <ToolBoxItems className="mt-6 " items={toolBoxItems} />
-              <ToolBoxItems className="mt-6 " itemsWrapperClasssName="-translate-x-1/2" items={toolBoxItems} />
+              <ToolBoxItems className="mt-6 " itemsWrapperClasssName="animate-move-left [animation-duration:30s]" items={toolBoxItems} />
+              <ToolBoxItems className="mt-6 " itemsWrapperClasssName="-translate-x-1/2 animate-move-right [animation-duration:30s]" items={toolBoxItems} />
 
 
             </Card>
           </div>
           <div className="md:grid md:grid-cols-5  md:gap-8 lg:grid-cols-5 ">
-          <Card className="h-[320px] p-0 flex flex-col col-span-3  lg:col-span-3 ">
-            <CardHeader title="Beyond the Code" description=" Explore my Interest and hobbies beyond the digital realm" className="px-6 py-6" />
+            <Card className="h-[320px] p-0 flex flex-col col-span-3  lg:col-span-3 ">
+              <CardHeader title="Beyond the Code" description=" Explore my Interest and hobbies beyond the digital realm" className="px-6 py-6" />
 
-            <div className="relative flex-1">
-              {hoobles.map(hobby => (
-                <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute " style={{
-                  left: hobby.left,
-                  top: hobby.top
-                }}>
-                  <span className="font-medium text-gray-950 ">{hobby.title}</span>
-                  <span>{hobby.emoji}</span>
+              <div className="relative flex-1" ref={constrainrRef}>
+                {hoobles.map(hobby => (
+                  <motion.div 
+                  key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute " style={{
+                    left: hobby.left,
+                    top: hobby.top
+                  }}
+                  drag
+                  dragConstraints={constrainrRef}
+                  >
+                    <span className="font-medium text-gray-950 ">{hobby.title}</span>
+                    <span>{hobby.emoji}</span>
+                  </motion.div>
+                ))}
+
+              </div>
+
+            </Card>
+            <div className="pt-8 md:p-0">
+
+              <Card className="h-[320px] md:w-[320px] lg:w-[370px] p-0 relative col-span-2 lg:col-span-2">
+                <Image src={mapImage} alt="map image" className="h-full w-full object-cover object-left-top " />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:outline-offset-2  after:rounded-full after:outline-gray-950/30 ">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400  animate-ping [animation-duration:2s]"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
+                  <Image className="size-20" src={simileEmoji} alt="map image" />
+
                 </div>
-              ))}
-
+              </Card>
             </div>
 
-          </Card>
-          <div className="pt-8 md:p-0">
 
-          <Card className="h-[320px] md:w-[320px] lg:w-[370px] p-0 relative col-span-2 lg:col-span-2">
-            <Image src={mapImage} alt="map image" className="h-full w-full object-cover object-left-top " />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2
-            after:outline-offset-2  after:rounded-full after:outline-gray-950/30 ">
-
-              <Image className="size-20" src={simileEmoji} alt="map image" />
-
-            </div>
-          </Card>
-          </div>
-
-          
           </div>
         </div>
       </div>

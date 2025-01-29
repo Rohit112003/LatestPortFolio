@@ -55,8 +55,16 @@ export const ProjectsSection = () => {
       <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 ">Featured Projects</h2>
       <p className="text-center lg:text-xl text-white/60 mt-4 md:text-lg max-w-md mx-auto">See how I transformed concepts into engaging digitial experiences</p>
       <div className=" flex flex-col mt-10 gap-20 md:mt-20    ">
-        {portfolioProjects.map(project => (
-          <div className="bg-gray-800 rounded-3xl z-0 overflow-hidden  after:z-10  relative  after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none  " key={project.title}>
+        {portfolioProjects.map((project,projectIndex) => (
+          <div className="bg-gray-800 rounded-3xl z-0 overflow-hidden  after:z-10  relative  after:content-['']
+           after:absolute after:inset-0 after:outline-2 
+           after:outline after:-outline-offset-2 after:rounded-3xl
+            after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 
+            lg:pt-16 lg:px-20 after:pointer-events-none  sticky top-16 "
+            style={{
+              top:`calc(64px + ${projectIndex*40}px)`
+            }}
+            key={project.title} >
 
             <div className="absolute inset-0 -z-10 opacity-5 " style={{
               backgroundImage: `url(${grainImage.src})`
@@ -93,7 +101,7 @@ export const ProjectsSection = () => {
                 </a>
               </div>
               <div className="">
-              <Image src={project.image} alt={project.title} className="mt-8 -mb-4 md:mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none" />
+                <Image src={project.image} alt={project.title} className="mt-8 -mb-4 md:mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none" />
               </div>
             </div>
           </div>
