@@ -138,7 +138,7 @@ export const AboutSection = () => {
           </Card>
           <div className="pt-8 md:p-0">
 
-          <Card className="h-[320px] md:w-[360px] p-0 relative col-span-2 lg:col-span-2">
+          <Card className="h-[320px] md:w-[320px] lg:w-[370px] p-0 relative col-span-2 lg:col-span-2">
             <Image src={mapImage} alt="map image" className="h-full w-full object-cover object-left-top " />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2
             after:outline-offset-2  after:rounded-full after:outline-gray-950/30 ">
