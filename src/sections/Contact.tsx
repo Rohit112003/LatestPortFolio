@@ -1,8 +1,9 @@
 import ArrowrightIcon from "@/assets/icons/arrow-up-right.svg"
 import grainImage from "@/assets/images/grain.jpg"
+import Link from "next/link";
 export const ContactSection = () => {
   return (
-    <div className="py-16 pt-12 lg:py-24 lg:pt-20">
+    <div className="py-16 pt-12 lg:py-24 lg:pt-20 " id="contact">
       <div className="container">
         <div className="text-center md:text-left relative overflow-hidden z-0  bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl ">
           <div className=" absolute inset-0 -z-20 opacity-5 " style={{
@@ -18,8 +19,11 @@ export const ContactSection = () => {
           </div>
           <div>
         
-          <button className="text-white border border-gray-950 w-max bg-gray-900 inline-flex gap-2 items-center px-6 h-12 rounded-xl">
-            <span className="font-semibold ">Contact me</span>
+          <button className="text-white border border-gray-950 w-max bg-gray-900 inline-flex gap-2 z-10 items-center px-6 h-12 rounded-xl">
+            <Link href="https://www.linkedin.com/in/rohit-kumar-454591233/" className="font-semibold ">
+             Contact me
+            </Link>
+           
             <ArrowrightIcon className="size-4" />
           </button>
           </div>

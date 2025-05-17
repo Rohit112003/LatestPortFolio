@@ -1,51 +1,52 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import starlightStudioImage from "@/assets/images/starlightStudioImage.png";
+import futureForgeImage from "@/assets/images/futureForgeImage.png";
+import Blockchain from "@/assets/images/Blockchain.webp";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg"
 import ArrowUp from "@/assets/icons/arrow-up-right.svg"
 import grainImage from "@/assets/images/grain.jpg"
 const portfolioProjects = [
-  {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "",
-    image: darkSaasLandingPage,
-  },
-  {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "",
-    image: lightSaasLandingPage,
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "",
-    image: aiStartupLandingPage,
-  },
+
+
+{
+  year: "2025",
+  title: "FutureForge – AI Career Guidance Platform",
+  results: [
+    { title: "Developed AI-powered resume & career recommendation platform" },
+    { title: "Integrated Gemini API for personalized insights" },
+    { title: "Delivered ATS-ready resumes and mock interview feedback" },
+  ],
+  link: "https://future-forge-b3iblb5zg-rohit112003s-projects.vercel.app/",
+  image: futureForgeImage,
+},
+  
+{
+  year: "2024",
+  title: "Starlight Studios – Video Conferencing App",
+  results: [
+    { title: "Built scalable video conferencing app with real-time communication" },
+    { title: "Used Docker & Kubernetes for consistent deployment" },
+    { title: "Integrated authentication with Clerk and streaming via Stream.io" },
+  ],
+  link: "https://star-light-studio.vercel.app/",
+  image: starlightStudioImage,
+},
+{
+  year: "2023",
+  title: "Certificates – Decentralized Application",
+  results: [
+    { title: "Secured Top 5 position at CodeUtsav 7.0" },
+    { title: "Implemented tamper-proof certificate validation using blockchain" },
+    { title: "Enhanced record security and transparency with smart contracts" },
+  ],
+  link: "[GitHub Link or 'Available upon request']",
+  image: Blockchain,
+},
+
 ];
 
 export const ProjectsSection = () => {
-  return <section className="pb-16 lg:py-24">
+  return <section id="projects" className="pb-16 lg:py-24">
 
     <div className="container">
       <div className="flex justify-center">
@@ -72,7 +73,6 @@ export const ProjectsSection = () => {
             <div className="lg:grid lg:grid-cols-2 lg:gap-16">
               <div className="lg:pb-16">
                 <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 text-transparent bg-clip-text font-bold uppercase tracking-widest text-sm ">
-                  <span>{project.company}</span>
                   <span>&bull;</span>
                   <span>{project.year}</span>
                 </div>

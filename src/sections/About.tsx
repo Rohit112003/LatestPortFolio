@@ -93,7 +93,7 @@ const hoobles = [
 export const AboutSection = () => {
   const constrainrRef= useRef(null);
   return (
-    <div className="py-20 lg:py-28">
+    <div className="py-20 lg:py-28 " id="about">
       <div className="container">
         <SectionHeader eyebrow="About Me " title="A glimpse Into My World" description="Learn more about who I am , What I do, what inspired me" />
         <div className="mt-20 flex flex-col  gap-8  ">
