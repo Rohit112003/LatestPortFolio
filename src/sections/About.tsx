@@ -16,6 +16,7 @@ import CardHeader from "@/components/CardHeader";
 import ToolBoxItems from "@/components/ToolBoxItems";
 import {motion} from "framer-motion"
 import { useRef } from "react";
+import { useEffect, useState } from "react";
 
 const toolBoxItems = [
   {
