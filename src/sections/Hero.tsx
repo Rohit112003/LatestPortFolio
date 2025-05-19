@@ -74,7 +74,7 @@ export const HeroSection = () => {
         <p className='mt-4 text-center text-white/60 md:text-lg'>I specialize in transforming designs into functional , high performance web applicayion . Let's discuss your next projects</p>
        </div>
        <div className='flex flex-col md:flex-row justify-center items-center mt-8 gap-4'>
-        <button className='inline-flex items-center gap-2 border-white/15 px-6  h-12 rounded-xl  '>
+        <button className='inline-flex items-center gap-2 border-white/15 px-6  h-12 rounded-xl  ' id='projects'>
           <span className='font-semibold z-20'>Explore My Work</span>
           <ArrowDown className='size-4' />
         </button>
